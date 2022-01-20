@@ -52,7 +52,9 @@ namespace TestPaginationTablette
 
                     if(selectedNoeud == "<-")
                     {
-                        var nouveauIndex = Data.Index - Data.NbElementAffiches - 1;
+
+                        var nouveauIndex = Data.Index - this.nbCaseDispoPourAffichage - 2;
+                     
                         DisplayData(nouveauIndex);
 
                     }

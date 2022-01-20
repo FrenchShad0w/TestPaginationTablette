@@ -17,11 +17,15 @@ namespace TestPaginationTablette
 
         public DataDto GetData(int index, int nbElement)
         {
-            var result = new DataDto(index, allDatas.Count);
 
             if (index > allDatas.Count - 1)
                 index = allDatas.Count - 1;
 
+            if (index < nbElement - 1)
+                index = 0;
+
+
+            var result = new DataDto(index, allDatas.Count);
 
 
             for (int i = index; i < nbElement + index; i++)
@@ -31,13 +35,13 @@ namespace TestPaginationTablette
             }
 
 
-            if (result.FirstPage == false)
+            if (result.OnFirstPage == false)
             {
                 result.Datas.RemoveAt(result.Datas.Count - 1);
                 result.Datas.Insert(0, "<-");
             }
 
-            if(result.LastPage == false)
+            if(result.OnLastPage == false)
             {
                 result.Datas.RemoveAt(result.Datas.Count - 1);
                 result.Datas.Add("->");
@@ -58,10 +62,17 @@ namespace TestPaginationTablette
         public List<string> Datas { get; set; } = new List<string>();
         public int Index { get; }
 
-        public int NbElementAffiches => Datas?.Where(x => x != "<-" && x != "->")?.Count() ?? 0;
+        public int NbElementAffiches => Datas?.Where(x => x != "<-" && x != "->" && x != string.Empty)?.Count() ?? 0;
         public int NbElementTotal { get;  }
 
-        public bool FirstPage => Index == 0; //on commence index == 0
-        public bool LastPage => Index + NbElementAffiches >= NbElementTotal;
+        public bool OnFirstPage => Index == 0; //on commence index == 0
+        public bool OnLastPage => Index + NbElementAffiches >= NbElementTotal;
     }
+
+
+
+
+
+
+    
 }
