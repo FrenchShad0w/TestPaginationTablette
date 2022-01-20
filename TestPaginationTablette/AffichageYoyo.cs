@@ -25,6 +25,7 @@ namespace TestPaginationTablette
 
             if (index < 0)
                 index = 0;
+
             Data = dataService.GetData(index, this.nbCaseDispoPourAffichage);
 
 
@@ -54,7 +55,7 @@ namespace TestPaginationTablette
                     if (selectedNoeud == "<-")
                     {
 
-                        var nouveauIndex = Data.Index - this.nbCaseDispoPourAffichage - 2;
+                        var nouveauIndex = Data.Index - (this.nbCaseDispoPourAffichage - 2);
 
                         DisplayData(nouveauIndex);
 
