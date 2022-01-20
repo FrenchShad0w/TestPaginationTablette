@@ -13,10 +13,11 @@ namespace TestPaginationTablette
                 datas.Add(i.ToString());
             }
 
-            int nbArboresecences = 14; 
+            int nbCaseDispo = 10;
 
-            new AffichageActuel(datas, nbArboresecences);
+            //new AffichageActuel(datas, nbArboresecences);
             //new TestNouveauAffichage(datas, nbArboresecences);
+            new AffichageYoyo(new DataService(datas), nbCaseDispo);
         }
     }
 }
