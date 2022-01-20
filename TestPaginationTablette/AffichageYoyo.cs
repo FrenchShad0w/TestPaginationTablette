@@ -6,6 +6,7 @@ namespace TestPaginationTablette
 {
     public class AffichageYoyo
     {
+        //
         private DataDto Data;
         private readonly DataService dataService;
         private readonly int nbCaseDispoPourAffichage;
@@ -50,15 +51,15 @@ namespace TestPaginationTablette
                 {
                     Console.WriteLine($"Data selectionnée : {selectedNoeud}");
 
-                    if(selectedNoeud == "<-")
+                    if (selectedNoeud == "<-")
                     {
 
                         var nouveauIndex = Data.Index - this.nbCaseDispoPourAffichage - 2;
-                     
+
                         DisplayData(nouveauIndex);
 
                     }
-                    else if(selectedNoeud == "->")
+                    else if (selectedNoeud == "->")
                     {
                         var nouveauIndex = Data.Index + Data.NbElementAffiches;
                         DisplayData(nouveauIndex);
@@ -72,5 +73,5 @@ namespace TestPaginationTablette
         }
     }
 }
-    
+
 
