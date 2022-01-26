@@ -8,16 +8,17 @@ namespace TestPaginationTablette
         static void Main(string[] args)
         {
             List<string> datas = new List<string>();
-            for (int i = 0; i < 51; i++)
+            for (int i = 1; i < 51; i++)
             {
                 datas.Add(i.ToString());
             }
 
-            int nbCaseDispo = 10;
+            int nbCaseDispo = 14;
 
-            //new AffichageActuel(datas, nbArboresecences);
+            //new AffichageActuel(datas, nbCaseDispo);
             //new TestNouveauAffichage(datas, nbArboresecences);
-            new AffichageYoyo(new DataService(datas), nbCaseDispo);
+            //new AffichageYoyo(new DataService(datas), nbCaseDispo);
+            new AffichageJojo(datas, nbCaseDispo);
         }
     }
 }
